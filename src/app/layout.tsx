@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Header from "@/components/layout/Header";
 import "./globals.css";
+import Footer from "@/components/layout/Footer";
+import FloatingWhatsApp from "@/components/contact/FloatingWhatsApp";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -22,10 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" data-scroll-behavior="smooth">
       <body className={manrope.variable}>
         <Header />
         {children}
+        <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

@@ -158,7 +158,7 @@ export default function Header() {
 
         {/* Ação desktop */}
         <Link
-          href="/#unidades"
+          href="/#agendamento"
           className="hidden rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:shadow-lg lg:inline-flex"
         >
           Agendar aula

@@ -4,6 +4,8 @@ import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import Testimonials from "@/components/home/Testimonials";
 import Units from "@/components/home/Units";
+import BookingCTA from "@/components/home/BookingCTA";
+import GoogleReviews from "@/components/home/GoogleReviews";
 
 
 const unidades = [
@@ -29,7 +31,9 @@ export default function Home() {
       <Hero />
       <About />
       <Units />
+      <BookingCTA />
       <Testimonials />
+      <GoogleReviews />
     </main>
   );
 }
