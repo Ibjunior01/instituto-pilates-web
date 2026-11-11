@@ -1,5 +1,7 @@
 
 import { unidades } from "@/data/units";
+import TrackedExternalLink from "@/components/analytics/TrackedExternalLink";
+
 
 export default function GoogleReviews() {
   return (
@@ -68,25 +70,27 @@ export default function GoogleReviews() {
 
                 <div className="mt-auto flex flex-col gap-3">
                   {linkAvaliacoes && (
-                    <a
+                    <TrackedExternalLink
                       href={linkAvaliacoes}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      unidade={unidade.id}
+                      evento="reviews_click"
+                      origem="home_google_reviews"
                       className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-6 py-3 text-center text-sm font-semibold text-white hover:bg-accent"
                     >
                       Ver perfil e avaliações no Google ↗
-                    </a>
+                    </TrackedExternalLink>
                   )}
 
                   {unidade.googleNovaAvaliacao && (
-                    <a
+                    <TrackedExternalLink
                       href={unidade.googleNovaAvaliacao}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      unidade={unidade.id}
+                      evento="reviews_click"
+                      origem="home_escrever_avaliacao"
                       className="inline-flex min-h-12 items-center justify-center rounded-full border border-primary px-6 py-3 text-center text-sm font-semibold text-primary hover:bg-background"
                     >
                       Escrever uma avaliação ↗
-                    </a>
+                    </TrackedExternalLink>
                   )}
 
                   {!linkAvaliacoes && (

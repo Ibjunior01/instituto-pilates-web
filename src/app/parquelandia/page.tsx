@@ -4,6 +4,8 @@ import Link from "next/link";
 import ImageGallery from "@/components/gallery/ImageGallery";
 import ContactSection from "@/components/contact/ContactSection";
 import LocalBusinessData from "@/components/seo/LocalBusinessData";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "Pilates e Laboratório de Força na Parquelândia | Instituto Pilates",
@@ -268,15 +270,33 @@ export default function ParquelandiaPage() {
                 Tenho interesse no Laboratório de Força →
               </Link>
             </div>
+            
+            <div className="relative min-h-[400px] overflow-hidden rounded-3xl sm:min-h-[440px]">
+              <Image
+                src="/images/parquelandia-laboratorio-forca.jpg"
+                alt="Equipamentos do Laboratório de Força da unidade Parquelândia"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
 
-            <div className="flex min-h-72 items-end rounded-3xl bg-gradient-to-br from-[#344568] to-primary p-8">
-              <div className="border-l-2 border-accent pl-5">
-                <p className="text-sm uppercase tracking-widest text-white/65">
-                  Acompanhamento individualizado
-                </p>
-                <p className="mt-3 text-2xl font-bold text-white">
-                  Evolução progressiva, respeitando você.
-                </p>
+              {/* Degradê mais forte na parte inferior */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/25 to-transparent" />
+
+              {/* Texto posicionado no rodapé */}
+              <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-8">
+                <div className="max-w-sm border-l-2 border-accent pl-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/80">
+                    Acompanhamento individualizado
+                  </p>
+
+                  <p className="mt-2 text-xl font-bold leading-snug text-white sm:text-2xl">
+                    Evolução progressiva,
+                    <span className="block">
+                      respeitando você.
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

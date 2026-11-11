@@ -1,3 +1,6 @@
+
+import type { UnidadeId } from "@/data/units";
+
 export type EventoConversao =
   | "whatsapp_click"
   | "instagram_click"
@@ -6,19 +9,22 @@ export type EventoConversao =
   | "booking_interest";
 
 export type DadosConversao = {
-  unidade: "aldeota" | "parquelandia";
-  servico?: string;
+  unidade: UnidadeId;
   origem: string;
+  servico?: string;
 };
 
 export function registrarConversao(
   evento: EventoConversao,
   dados: DadosConversao
-) {
-  // Preparado para integração futura com GA4.
-  // Nenhum dado é enviado nesta versão.
+): void {
+  // Etapa 15.1: diagnóstico local.
+  // Ainda não envia informações ao Google Analytics.
 
   if (process.env.NODE_ENV === "development") {
-    console.info("[Conversão]", evento, dados);
+    console.info("[Instituto Pilates] Conversão:", {
+      evento,
+      ...dados,
+    });
   }
 }

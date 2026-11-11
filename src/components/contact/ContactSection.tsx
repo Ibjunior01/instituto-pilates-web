@@ -5,6 +5,8 @@ import {
   type UnidadeId,
 } from "@/data/units";
 
+import TrackedExternalLink from "@/components/analytics/TrackedExternalLink";
+
 type ContactSectionProps = {
   unidadeId: UnidadeId;
 };
@@ -28,17 +30,20 @@ export default function ContactSection({
     {
       titulo: "Instagram",
       href: unidade.instagram,
+      evento: "instagram_click" as const,
     },
     {
       titulo: "Como chegar",
       href: unidade.googleMaps,
+      evento: "maps_click" as const,
     },
     {
       titulo: "Avaliações do Google",
       href: unidade.googleAvaliacoes,
+      evento: "reviews_click" as const,
     },
   ].filter(
-    (item): item is { titulo: string; href: string } =>
+    (item): item is typeof item & { href: string } =>
       typeof item.href === "string" &&
       /^https:\/\//.test(item.href)
   );
@@ -66,8 +71,8 @@ export default function ContactSection({
           </h2>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
-            Entre em contato com o Instituto Pilates
-            {` ${unidade.bairro}`} e conheça nossos serviços.
+            Entre em contato com o Instituto Pilates{" "}
+            {unidade.bairro} e conheça nossos serviços.
             Nossa equipe poderá orientar você sobre
             as opções disponíveis.
           </p>
@@ -100,14 +105,15 @@ export default function ContactSection({
 
           <div className="mt-8 space-y-3">
             {whatsappLink ? (
-              <a
+              <TrackedExternalLink
                 href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-4 text-center text-sm font-bold text-white hover:-translate-y-1"
+                unidade={unidade.id}
+                evento="whatsapp_click"
+                origem="secao_contato"
+                className="flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-4 text-center text-sm font-semibold text-white transition-colors hover:bg-primary"
               >
                 Conversar pelo WhatsApp
-              </a>
+              </TrackedExternalLink>
             ) : (
               <p className="rounded-xl bg-background p-4 text-sm text-muted">
                 Canal de WhatsApp em configuração.
@@ -116,18 +122,20 @@ export default function ContactSection({
 
             {unidadeId === "parquelandia" &&
               whatsappConfigurado && (
-                <a
+                <TrackedExternalLink
                   href={criarLinkWhatsApp(
                     unidade.whatsapp!,
                     unidadeId,
                     "Laboratório de Força"
                   )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex min-h-12 items-center justify-center rounded-full border border-primary px-6 py-4 text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white"
+                  unidade={unidadeId}
+                  evento="whatsapp_click"
+                  origem="secao_contato_laboratorio"
+                  servico="Laboratório de Força"
+                  className="flex min-h-12 items-center justify-center rounded-full border border-primary px-6 py-4 text-center text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
                 >
                   Tenho interesse no Laboratório de Força
-                </a>
+                </TrackedExternalLink>
               )}
           </div>
 
@@ -139,15 +147,16 @@ export default function ContactSection({
 
               <div className="flex flex-wrap gap-4">
                 {redes.map((rede) => (
-                  <a
+                  <TrackedExternalLink
                     key={rede.titulo}
                     href={rede.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    unidade={unidadeId}
+                    evento={rede.evento}
+                    origem="secao_contato"
                     className="text-sm font-semibold text-accent hover:underline"
                   >
                     {rede.titulo} ↗
-                  </a>
+                  </TrackedExternalLink>
                 ))}
               </div>
             </div>

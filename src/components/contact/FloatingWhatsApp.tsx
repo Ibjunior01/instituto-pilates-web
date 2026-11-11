@@ -8,6 +8,8 @@ import {
   unidades,
   type UnidadeId,
 } from "@/data/units";
+import { registrarConversao } from "@/lib/analytics";
+
 
 const ids: UnidadeId[] = ["aldeota", "parquelandia"];
 
@@ -117,6 +119,13 @@ export default function FloatingWhatsApp() {
         rel="noopener noreferrer"
         aria-label={`Conversar no WhatsApp da unidade ${unidades[unidadeAtual].bairro}`}
         className="fixed bottom-6 right-6 z-[60] flex h-16 w-16 items-center justify-center rounded-full bg-[#176B45] text-white shadow-xl transition-transform hover:scale-105 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
+
+        onClick={() => {
+          registrarConversao("whatsapp_click", {
+            unidade: unidadeAtual,
+            origem: "botao_flutuante_pagina",
+          });
+        }}
       >
         <IconeWhatsApp />
       </a>
@@ -161,7 +170,14 @@ export default function FloatingWhatsApp() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => setAberto(false)}
+                  onClick={() => {
+                    registrarConversao("whatsapp_click", {
+                      unidade: id,
+                      origem: "botao_flutuante_home",
+                    });
+
+                    setAberto(false);
+                  }}
                   className="block rounded-xl border border-border p-4 transition-colors hover:border-accent hover:bg-background"
                 >
                   <span className="block font-bold text-primary">
