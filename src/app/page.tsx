@@ -7,6 +7,21 @@ import Units from "@/components/home/Units";
 import BookingCTA from "@/components/home/BookingCTA";
 import GoogleReviews from "@/components/home/GoogleReviews";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      "Instituto Pilates em Fortaleza | Aldeota e Parquelândia",
+  },
+  alternates: {
+    canonical: "/",
+  },
+
+  description:
+    "Conheça o Instituto Pilates em Fortaleza. Unidades na Aldeota e Parquelândia, com aulas de Pilates e Laboratório de Força. Entre em contato.",
+};
+
 
 const unidades = [
   {

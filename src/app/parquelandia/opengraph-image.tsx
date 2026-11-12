@@ -1,0 +1,121 @@
+
+import { ImageResponse } from "next/og";
+
+export const alt =
+  "Instituto Pilates Parquelândia — Pilates e Laboratório de Força";
+
+export const size = {
+  width: 1200,
+  height: 630,
+};
+
+export const contentType = "image/png";
+
+export default function OpenGraphImage() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          padding: "75px 85px",
+          background:
+            "linear-gradient(135deg, #030B36 0%, #152456 100%)",
+          color: "#FFFFFF",
+          fontFamily: "sans-serif",
+        }}
+      >
+        {/* Marca institucional */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "18px",
+          }}
+        >
+          <div
+            style={{
+              width: "14px",
+              height: "52px",
+              background: "#E52D16",
+              borderRadius: "8px",
+            }}
+          />
+
+          <span
+            style={{
+              fontSize: 35,
+              fontWeight: 700,
+            }}
+          >
+            INSTITUTO PILATES
+          </span>
+        </div>
+
+        {/* Identificação da unidade */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <span
+            style={{
+              fontSize: 21,
+              color: "#F0A197",
+              fontWeight: 600,
+              letterSpacing: "3px",
+              marginBottom: "22px",
+            }}
+          >
+            UNIDADE PARQUELÂNDIA
+          </span>
+
+          <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                fontSize: 64,
+                fontWeight: 800,
+                lineHeight: 1.12,
+                letterSpacing: "-2px",
+                maxWidth: "1000px",
+            }}
+          >
+            <span>Pilates e</span>
+            <span>Laboratório de Força</span>
+          </div>
+
+
+          <p
+            style={{
+              fontSize: 27,
+              color: "#D8DEEE",
+              marginTop: "22px",
+            }}
+          >
+            Fortaleza, Ceará
+          </p>
+        </div>
+
+        {/* Rodapé */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            borderTop: "1px solid #536080",
+            paddingTop: "25px",
+            fontSize: 21,
+            color: "#CBD3E8",
+          }}
+        >
+          Movimento, força e autonomia.
+        </div>
+      </div>
+    ),
+    size
+  );
+}

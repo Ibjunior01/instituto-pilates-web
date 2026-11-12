@@ -38,7 +38,8 @@ export default function Testimonials() {
         <div className="mt-12 max-w-3xl overflow-hidden rounded-3xl bg-primary shadow-xl">
           <video
             controls
-            preload="metadata"
+            poster="/images/hero-pilates.jpg"
+            preload="none"
             playsInline
             className="aspect-video w-full bg-black object-contain"
             aria-label="Vídeo de depoimento de aluno do Instituto Pilates"

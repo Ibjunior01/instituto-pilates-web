@@ -8,9 +8,16 @@ import Image from "next/image";
 
 
 export const metadata: Metadata = {
-  title: "Pilates e Laboratório de Força na Parquelândia | Instituto Pilates",
+  title: {
+    absolute:
+      "Pilates e Laboratório de Força na Parquelândia | Instituto Pilates",
+  },
+  alternates: {
+    canonical: "/parquelandia",
+  },
+
   description:
-    "Conheça o Instituto Pilates Parquelândia, em Fortaleza. Pilates e Laboratório de Força com treinamento individualizado e acompanhamento de fisioterapeutas.",
+    "Conheça o Instituto Pilates Parquelândia, em Fortaleza. Pilates e Laboratório de Força com acompanhamento individualizado. Agende seu atendimento.",
 };
 
 const beneficios = [
@@ -270,7 +277,7 @@ export default function ParquelandiaPage() {
                 Tenho interesse no Laboratório de Força →
               </Link>
             </div>
-            
+
             <div className="relative min-h-[400px] overflow-hidden rounded-3xl sm:min-h-[440px]">
               <Image
                 src="/images/parquelandia-laboratorio-forca.jpg"

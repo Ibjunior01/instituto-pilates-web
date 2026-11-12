@@ -7,9 +7,16 @@ import ContactSection from "@/components/contact/ContactSection";
 import LocalBusinessData from "@/components/seo/LocalBusinessData";
 
 export const metadata: Metadata = {
-  title: "Pilates na Aldeota | Instituto Pilates",
+  title: {
+    absolute:
+      "Pilates na Aldeota, Fortaleza | Instituto Pilates",
+  },
+  alternates: {
+    canonical: "/aldeota",
+  },
+
   description:
-    "Conheça a unidade Aldeota do Instituto Pilates, em Fortaleza. Um espaço dedicado ao Pilates, ao movimento e ao bem-estar.",
+    "Conheça o Instituto Pilates Aldeota, em Fortaleza. Aulas de Pilates com acompanhamento profissional. Veja nossa estrutura e entre em contato.",
 };
 
 const diferenciais = [
@@ -152,7 +159,7 @@ export default function AldeotaPage() {
             <video
               controls
               playsInline
-              preload="metadata"
+              preload="none"
               poster="/images/hero-pilates.jpg"
               className="aspect-video w-full object-contain"
               aria-label="Apresentação do Instituto Pilates Aldeota"

@@ -1,20 +1,28 @@
+
 @import "tailwindcss";
 
+/* Cores institucionais e tokens de interface */
 :root {
-  --color-primary: #030b36;
-  --color-accent: #e52d16;
-  --color-background: #f7f8fa;
-  --color-surface: #ffffff;
-  --color-muted: #69758b;
-  --color-border: #e5e9f0;
+  --brand-primary: #030b36;
+  --brand-red: #e52d16;
+
+  --ui-accent: #b91c1c;
+  --ui-background: #f7f8fa;
+  --ui-surface: #ffffff;
+  --ui-muted: #596579;
+  --ui-border: #e5e9f0;
 }
 
+/* Integração com Tailwind CSS v4 */
 @theme inline {
-  --color-primary: var(--color-primary);
-  --color-accent: var(--color-accent);
-  --color-background: var(--color-background);
-  --color-surface: var(--color-surface);
-  --color-muted: var(--color-muted);
+  --color-primary: var(--brand-primary);
+  --color-brand: var(--brand-red);
+  --color-accent: var(--ui-accent);
+  --color-background: var(--ui-background);
+  --color-surface: var(--ui-surface);
+  --color-muted: var(--ui-muted);
+  --color-border: var(--ui-border);
+
   --font-sans: var(--font-manrope);
 }
 
@@ -28,8 +36,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-background);
-  color: var(--color-primary);
+  background: var(--ui-background);
+  color: var(--brand-primary);
   font-family: var(--font-manrope), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -47,7 +55,7 @@ button {
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--ui-accent);
   color: white;
 }
 
