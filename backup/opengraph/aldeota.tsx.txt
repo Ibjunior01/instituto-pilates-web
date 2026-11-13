@@ -1,8 +1,9 @@
 
 import { ImageResponse } from "next/og";
+export const dynamic = "force-static";
 
 export const alt =
-  "Instituto Pilates Parquelândia — Pilates e Laboratório de Força";
+  "Instituto Pilates Aldeota — Pilates em Fortaleza";
 
 export const size = {
   width: 1200,
@@ -28,7 +29,6 @@ export default function OpenGraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        {/* Marca institucional */}
         <div
           style={{
             display: "flex",
@@ -55,7 +55,6 @@ export default function OpenGraphImage() {
           </span>
         </div>
 
-        {/* Identificação da unidade */}
         <div
           style={{
             display: "flex",
@@ -71,28 +70,24 @@ export default function OpenGraphImage() {
               marginBottom: "22px",
             }}
           >
-            UNIDADE PARQUELÂNDIA
+            UNIDADE ALDEOTA
           </span>
 
-          <div
+          <h1
             style={{
-                display: "flex",
-                flexDirection: "column",
-                fontSize: 64,
-                fontWeight: 800,
-                lineHeight: 1.12,
-                letterSpacing: "-2px",
-                maxWidth: "1000px",
+              fontSize: 72,
+              fontWeight: 800,
+              lineHeight: 1.12,
+              letterSpacing: "-2px",
+              margin: 0,
             }}
           >
-            <span>Pilates e</span>
-            <span>Laboratório de Força</span>
-          </div>
-
+            Pilates na Aldeota
+          </h1>
 
           <p
             style={{
-              fontSize: 27,
+              fontSize: 30,
               color: "#D8DEEE",
               marginTop: "22px",
             }}
@@ -101,7 +96,6 @@ export default function OpenGraphImage() {
           </p>
         </div>
 
-        {/* Rodapé */}
         <div
           style={{
             display: "flex",
@@ -112,7 +106,7 @@ export default function OpenGraphImage() {
             color: "#CBD3E8",
           }}
         >
-          Movimento, força e autonomia.
+          Movimento, cuidado e bem-estar.
         </div>
       </div>
     ),

@@ -49,5 +49,12 @@ out/
 .DS_Store
 *.pem
 
-# Vídeos locais não versionados
+# Ignorar vídeos não aprovados
 /public/videos/*.mp4
+
+# Permitir somente os vídeos finais do site
+!/public/videos/apresentacao-aldeota.mp4
+!/public/videos/depoimento-aluno-01.mp4
+
+# Arquivos temporários de conversão e testes
+/dados/

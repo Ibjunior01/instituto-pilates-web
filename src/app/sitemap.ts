@@ -1,6 +1,8 @@
 
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl =
     process.env.SITE_URL ||
@@ -8,7 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ? "http://localhost:3000"
       : null);
 
-  // Não publicar URLs locais no sitemap de produção.
+
+
+  // Não gerar URLs públicas sem domínio configurado.
   if (!siteUrl) {
     return [];
   }
