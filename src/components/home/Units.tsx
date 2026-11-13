@@ -10,7 +10,7 @@ const unidades = [
     categoria: "PILATES",
     titulo: "Movimente-se com cuidado.",
     descricao:
-      "Um espaço dedicado à prática de Pilates, ao bem-estar e à atenção individualizada.",
+      "Nova unidade inaugurada em 2026, com Pilates especializado na saúde da coluna vertebral e atendimento individualizado.",
     servicos: ["Pilates"],
     href: "/aldeota",
     destaque: false,
@@ -21,7 +21,7 @@ const unidades = [
     categoria: "PILATES + FORÇA",
     titulo: "Movimento e força para sua vida.",
     descricao:
-      "Pilates e Laboratório de Força, com exercícios individualizados e acompanhamento de fisioterapeutas.",
+      "Há 13 anos cuidando da saúde da coluna, com Pilates especializado e Laboratório de Força acompanhado por fisioterapeutas.",
     servicos: ["Pilates", "Laboratório de Força"],
     href: "/parquelandia",
     destaque: true,

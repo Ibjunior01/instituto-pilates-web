@@ -4,6 +4,7 @@ import Link from "next/link";
 import ImageGallery from "@/components/gallery/ImageGallery";
 import ContactSection from "@/components/contact/ContactSection";
 import LocalBusinessData from "@/components/seo/LocalBusinessData";
+import UnitIdentity from "@/components/institutional/UnitIdentity";
 import Image from "next/image";
 
 
@@ -136,7 +137,7 @@ export default function ParquelandiaPage() {
 
           <div
             role="img"
-            aria-label="Área reservada para fotografia da unidade Parquelândia"
+            aria-label="Ambiente do Instituto Pilates Parquelândia"
             className="relative flex aspect-[4/5] items-end overflow-hidden rounded-[2rem] bg-primary p-8 shadow-2xl shadow-primary/15 sm:aspect-[5/4] lg:aspect-[4/5]"
             style={{
               backgroundImage:
@@ -156,6 +157,8 @@ export default function ParquelandiaPage() {
           </div>
         </div>
       </section>
+
+      <UnitIdentity unidadeId="parquelandia" />
 
       {/* 2. Serviços */}
       <section
@@ -338,7 +341,7 @@ export default function ParquelandiaPage() {
         </div>
       </section>
 
-      {/* 4. Galeria provisória */}
+      {/* 4. Galeria da unidade */}
       <section
         id="estrutura"
         className="scroll-mt-28 bg-white px-6 py-24"
@@ -353,8 +356,7 @@ export default function ParquelandiaPage() {
           </h2>
 
           <p className="mt-5 max-w-2xl leading-8 text-muted">
-            Em breve, apresentaremos fotografias reais dos
-            ambientes de Pilates e do Laboratório de Força.
+            Explore os ambientes da Parquelândia, incluindo os espaços de Pilates e do Laboratório de Força.
           </p>
 
           <div className="mt-12">

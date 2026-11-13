@@ -5,6 +5,7 @@ import Image from "next/image";
 import ImageGallery from "@/components/gallery/ImageGallery";
 import ContactSection from "@/components/contact/ContactSection";
 import LocalBusinessData from "@/components/seo/LocalBusinessData";
+import UnitIdentity from "@/components/institutional/UnitIdentity";
 
 export const metadata: Metadata = {
   title: {
@@ -20,24 +21,9 @@ export const metadata: Metadata = {
 };
 
 const diferenciais = [
-  {
-    numero: "01",
-    titulo: "Atenção individualizada",
-    descricao:
-      "Uma experiência de movimento que respeita as necessidades e os objetivos de cada aluno.",
-  },
-  {
-    numero: "02",
-    titulo: "Acompanhamento profissional",
-    descricao:
-      "Orientação durante a prática, com atenção à execução e à evolução dos exercícios.",
-  },
-  {
-    numero: "03",
-    titulo: "Bem-estar e movimento",
-    descricao:
-      "Uma proposta de atividade física que valoriza a mobilidade, o equilíbrio e a qualidade de vida.",
-  },
+  { numero: "01", titulo: "Metodologia especializada", descricao: "Pilates voltado à funcionalidade, prevenção e reabilitação, com foco na saúde da coluna vertebral." },
+  { numero: "02", titulo: "Fisioterapeutas qualificados", descricao: "Equipe de fisioterapeutas qualificados e especialistas em coluna vertebral, comprometidos com a saúde e o bem-estar de cada aluno." },
+  { numero: "03", titulo: "Acolhimento e confiança", descricao: "Ambiente acolhedor com acompanhamento profissional, atenção individualizada e uma relação de confiança construída diariamente." },
 ];
 
 const galeria = [
@@ -118,7 +104,7 @@ export default function AldeotaPage() {
           <div className="relative">
             <div
               role="img"
-              aria-label="Área reservada para fotografia do Studio Aldeota"
+              aria-label="Ambiente do Instituto Pilates Aldeota"
               className="relative flex aspect-[4/5] items-end overflow-hidden rounded-[2rem] bg-primary p-8 shadow-2xl shadow-primary/15 sm:aspect-[5/4] lg:aspect-[4/5]"
               style={{
                 backgroundImage:
@@ -146,6 +132,8 @@ export default function AldeotaPage() {
         </div>
       </section>
 
+
+      <UnitIdentity unidadeId="aldeota" />
 
       {/* Apresentação em vídeo da unidade */}
       <section
@@ -253,7 +241,7 @@ export default function AldeotaPage() {
         </div>
       </section>
 
-      {/* 3. Galeria provisória */}
+      {/* 3. Galeria da unidade */}
       <section
         id="estrutura"
         aria-labelledby="estrutura-titulo"
@@ -272,8 +260,7 @@ export default function AldeotaPage() {
           </h2>
 
           <p className="mt-5 max-w-2xl leading-8 text-muted">
-            Em breve, apresentaremos mais fotografias
-            dos ambientes e das atividades da unidade.
+            Conheça os ambientes da unidade Aldeota e nossa estrutura dedicada à prática de Pilates.
           </p>
           
           <div className="mt-12">
