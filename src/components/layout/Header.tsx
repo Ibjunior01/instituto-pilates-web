@@ -2,7 +2,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const unidades = [
@@ -64,7 +63,7 @@ export default function Header() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         {/* Identidade visual */}
-        <Link
+        <a
           href="/"
           onClick={fecharMenus}
           aria-label="Instituto Pilates - Página inicial"
@@ -82,27 +81,27 @@ export default function Header() {
               PILATES
             </span>
           </span>
-        </Link>
+        </a>
 
         {/* Navegação desktop */}
         <nav
           aria-label="Navegação principal"
           className="hidden items-center gap-7 lg:flex"
         >
-          <Link
+          <a
             href="/"
             aria-current={pathname === "/" ? "page" : undefined}
             className="font-medium text-primary transition-colors hover:text-accent"
           >
             Início
-          </Link>
+          </a>
 
-          <Link
+          <a
             href="/#sobre"
             className="font-medium text-primary transition-colors hover:text-accent"
           >
             Sobre nós
-          </Link>
+          </a>
 
           {/* Dropdown de unidades */}
           <div className="relative">
@@ -130,7 +129,7 @@ export default function Header() {
                 className="absolute left-1/2 top-full mt-5 w-72 -translate-x-1/2 rounded-2xl border border-border bg-white p-2 shadow-xl"
               >
                 {unidades.map((unidade) => (
-                  <Link
+                  <a
                     key={unidade.href}
                     href={unidade.href}
                     onClick={fecharMenus}
@@ -142,27 +141,27 @@ export default function Header() {
                     <span className="mt-1 block text-xs text-muted">
                       {unidade.descricao}
                     </span>
-                  </Link>
+                  </a>
                 ))}
               </div>
             )}
           </div>
 
-          <Link
+          <a
             href="/#depoimentos"
             className="font-medium text-primary transition-colors hover:text-accent"
           >
             Depoimentos
-          </Link>
+          </a>
         </nav>
 
         {/* Ação desktop */}
-        <Link
+        <a
           href="/#agendamento"
           className="hidden rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:shadow-lg lg:inline-flex"
         >
           Agendar aula
-        </Link>
+        </a>
 
         {/* Botão mobile */}
         <button
@@ -187,21 +186,21 @@ export default function Header() {
           className="border-t border-border bg-white px-6 pb-6 pt-4 lg:hidden"
         >
           <div className="flex flex-col gap-1">
-            <Link
+            <a
               href="/"
               onClick={fecharMenus}
               className="rounded-xl px-3 py-3 font-medium text-primary hover:bg-background"
             >
               Início
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="/#sobre"
               onClick={fecharMenus}
               className="rounded-xl px-3 py-3 font-medium text-primary hover:bg-background"
             >
               Sobre nós
-            </Link>
+            </a>
 
             <button
               type="button"
@@ -222,7 +221,7 @@ export default function Header() {
                 className="ml-3 flex flex-col border-l-2 border-border pl-3"
               >
                 {unidades.map((unidade) => (
-                  <Link
+                  <a
                     key={unidade.href}
                     href={unidade.href}
                     onClick={fecharMenus}
@@ -234,26 +233,26 @@ export default function Header() {
                     <span className="block text-xs text-muted">
                       {unidade.descricao}
                     </span>
-                  </Link>
+                  </a>
                 ))}
               </div>
             )}
 
-            <Link
+            <a
               href="/#depoimentos"
               onClick={fecharMenus}
               className="rounded-xl px-3 py-3 font-medium text-primary hover:bg-background"
             >
               Depoimentos
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="/#unidades"
               onClick={fecharMenus}
               className="mt-4 rounded-full bg-accent px-6 py-3 text-center font-semibold text-white"
             >
               Agendar aula
-            </Link>
+            </a>
           </div>
         </nav>
       )}

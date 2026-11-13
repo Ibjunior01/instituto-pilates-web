@@ -1,8 +1,5 @@
 
-import {
-  unidades,
-  type UnidadeId,
-} from "@/data/units";
+import { unidades, type UnidadeId } from "@/data/units";
 
 const enderecos = {
   aldeota: {
@@ -51,13 +48,16 @@ export default function LocalBusinessData({
     }),
   };
 
-  const json = JSON.stringify(dados).replace(/</g, "\\u003c");
-
   return (
-  <script
-    type="application/ld+json"
-    data-instituto-unidade={unidadeId}
-    dangerouslySetInnerHTML={{ __html: json }}
+    <script
+      type="application/ld+json"
+      data-instituto-unidade={unidadeId}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(dados).replace(
+          /</g,
+          "\\u003c"
+        ),
+      }}
     />
   );
 }

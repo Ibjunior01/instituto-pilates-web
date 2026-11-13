@@ -1,6 +1,4 @@
 
-import Link from "next/link";
-
 export default function Hero() {
   return (
     <section
@@ -47,7 +45,7 @@ export default function Hero() {
 
           {/* Ações principais */}
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <Link
+            <a
               href="/#agendamento"
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-8 py-4 text-sm font-bold text-white shadow-lg shadow-red-500/10 transition-all hover:-translate-y-1 hover:shadow-xl"
             >
@@ -55,14 +53,14 @@ export default function Hero() {
               <span aria-hidden="true" className="ml-3">
                 →
               </span>
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="/#sobre"
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-primary/15 bg-white px-8 py-4 text-sm font-semibold text-primary transition-all hover:border-primary/40 hover:bg-primary/5"
             >
               Conheça o Instituto
-            </Link>
+            </a>
           </div>
 
           {/* Identificação das unidades */}
@@ -72,7 +70,7 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-              <Link
+              <a
                 href="/aldeota"
                 className="text-sm font-semibold text-primary hover:text-accent"
               >
@@ -80,9 +78,9 @@ export default function Hero() {
                   ●
                 </span>
                 Aldeota
-              </Link>
+              </a>
 
-              <Link
+              <a
                 href="/parquelandia"
                 className="text-sm font-semibold text-primary hover:text-accent"
               >
@@ -90,7 +88,7 @@ export default function Hero() {
                   ●
                 </span>
                 Parquelândia
-              </Link>
+              </a>
             </div>
           </div>
         </div>

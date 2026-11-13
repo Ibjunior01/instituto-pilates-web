@@ -1,7 +1,6 @@
 
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 
 const unidades = [
@@ -153,14 +152,14 @@ export default function Units() {
                 </div>
 
                 <div className="mt-auto pt-9">
-                  <Link
+                  <a
                     href={unidade.href}
                     aria-label={`Conhecer a unidade ${unidade.nome}`}
                     className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-1 hover:bg-accent"
                   >
                     Conhecer unidade
                     <span aria-hidden="true">→</span>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </motion.article>
@@ -198,13 +197,13 @@ export default function Units() {
               </p>
             </div>
 
-            <Link
+            <a
               href="/parquelandia#laboratorio-de-forca"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-white"
             >
               Saiba mais
               <span aria-hidden="true">→</span>
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>

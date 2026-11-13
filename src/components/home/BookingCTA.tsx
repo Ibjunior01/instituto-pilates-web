@@ -1,5 +1,4 @@
 
-import Link from "next/link";
 import {
   criarLinkWhatsApp,
   unidades,
@@ -85,7 +84,7 @@ export default function BookingCTA() {
                   );
 
                   return (
-                    <Link
+                    <a
                       key={servico}
                       href={destino.href}
                       target={
@@ -106,17 +105,17 @@ export default function BookingCTA() {
                       <span aria-hidden="true" className="ml-2">
                         →
                       </span>
-                    </Link>
+                    </a>
                   );
                 })}
               </div>
 
-              <Link
+              <a
                 href={`/${unidade.id}`}
                 className="mt-6 text-center text-sm font-semibold text-primary hover:text-accent"
               >
                 Ver informações da unidade
-              </Link>
+              </a>
             </article>
           ))}
         </div>

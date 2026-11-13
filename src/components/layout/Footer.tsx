@@ -1,5 +1,4 @@
 
-import Link from "next/link";
 import { unidades } from "@/data/units";
 
 export default function Footer() {
@@ -9,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Marca */}
           <div>
-            <Link href="/" className="inline-flex items-center gap-3">
+            <a href="/" className="inline-flex items-center gap-3">
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-lg font-extrabold text-primary">
                 IP
               </span>
@@ -17,7 +16,7 @@ export default function Footer() {
               <span className="text-xl font-bold">
                 Instituto Pilates
               </span>
-            </Link>
+            </a>
 
             <p className="mt-6 max-w-sm leading-7 text-white/70">
               Movimento, cuidado e qualidade de vida,
@@ -31,18 +30,18 @@ export default function Footer() {
             <h2 className="font-bold">Navegação</h2>
 
             <div className="mt-6 flex flex-col gap-4 text-sm text-white/70">
-              <Link href="/" className="hover:text-white">
+              <a href="/" className="hover:text-white">
                 Início
-              </Link>
-              <Link href="/#sobre" className="hover:text-white">
+              </a>
+              <a href="/#sobre" className="hover:text-white">
                 Sobre nós
-              </Link>
-              <Link href="/#unidades" className="hover:text-white">
+              </a>
+              <a href="/#unidades" className="hover:text-white">
                 Nossas unidades
-              </Link>
-              <Link href="/#depoimentos" className="hover:text-white">
+              </a>
+              <a href="/#depoimentos" className="hover:text-white">
                 Depoimentos
-              </Link>
+              </a>
             </div>
           </nav>
 
@@ -53,12 +52,12 @@ export default function Footer() {
             <div className="mt-6 space-y-6">
               {Object.values(unidades).map((unidade) => (
                 <div key={unidade.id}>
-                  <Link
+                  <a
                     href={`/${unidade.id}`}
                     className="font-semibold hover:text-white/80"
                   >
                     {unidade.bairro}
-                  </Link>
+                  </a>
 
                   <p className="mt-2 text-sm text-white/65">
                     {unidade.servicos.join(" · ")}
