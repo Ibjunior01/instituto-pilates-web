@@ -1,18 +1,15 @@
 
 import type { MetadataRoute } from "next";
+import { obterUrlSite } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl =
-    process.env.SITE_URL ||
-    (process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : null);
+  const siteUrl = obterUrlSite();
+  const permitirIndexacao =
+    process.env.SITE_INDEXABLE === "true";
 
-  // Sem domínio configurado, não liberar
-  // o rastreamento em produção.
-  if (!siteUrl) {
+  if (!permitirIndexacao || !siteUrl) {
     return {
       rules: {
         userAgent: "*",
@@ -21,13 +18,11 @@ export default function robots(): MetadataRoute.Robots {
     };
   }
 
-  const baseUrl = siteUrl.replace(/\/+$/, "");
-
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }

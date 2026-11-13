@@ -1,37 +1,31 @@
 
 import type { MetadataRoute } from "next";
+import { obterUrlSite } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl =
-    process.env.SITE_URL ||
-    (process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : null);
+  const siteUrl = obterUrlSite();
+  const permitirIndexacao =
+    process.env.SITE_INDEXABLE === "true";
 
-
-
-  // Não gerar URLs públicas sem domínio configurado.
-  if (!siteUrl) {
+  if (!permitirIndexacao || !siteUrl) {
     return [];
   }
 
-  const baseUrl = siteUrl.replace(/\/+$/, "");
-
   return [
     {
-      url: baseUrl,
+      url: siteUrl,
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/aldeota`,
+      url: `${siteUrl}/aldeota`,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/parquelandia`,
+      url: `${siteUrl}/parquelandia`,
       changeFrequency: "monthly",
       priority: 0.9,
     },
